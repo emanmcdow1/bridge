@@ -1,0 +1,31 @@
+<% if logged_in? %>
+<%= form_for @event, :html => { :multipart => true } do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </p>
+
+  <p>
+    <%= form.label :date %>
+    <%= form.datetime_local_field :date %>
+  </p>
+
+  <p>
+    <%= form.label :background %>
+    <%= form.file_field :background %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to "Log out", logout_path, method: :delete %>
+<% end %>

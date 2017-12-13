@@ -3,12 +3,168 @@
   <head>
     <title>Bridge</title>
     <%= csrf_meta_tags %>
-
+    <META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="https://www.stitcher.com/podcast/this-american-life">
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'scripts', 'data-turbolinks-track': 'reload', async: true %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="blkbox"></div>
+    <div class="wrapper">
+      <div id="top">
+        <div class="blk"></div>
+        <%= image_tag("logo.png", :alt => "Bridge Logo", :id => "logo") %>
+        <div id='links'>
+          <div>
+            <%= link_to "Home", root_path, class: "hvr-float #{active_class(root_url)} #{active_class(pages_home_url)}" %>
+            <div class="infohvr">
+
+            </div>
+          </div>
+          <div class="tooltip">
+            <%= link_to "Message", page_path('message'),  class: "hvr-float #{active_class(pages_message_url)}" %>
+            <div class="tooltiptext">
+              <h4>Our Message</h4>
+              <h4>Classes</h4>
+            </div>
+          </div>
+          <div class="tooltip">
+            <%= link_to "Contact", page_path('contact'),  class: "hvr-float #{active_class(pages_contact_url)}"%>
+            <div class="tooltiptext">
+              <h4>Staff</h4>
+              <h4>Location</h4>
+              <h4>Groups</h4>
+            </div>
+          </div>
+          <div class="tooltip">
+            <%= link_to "Events", page_path('events'),  class: "hvr-float #{active_class(pages_events_url)}"%>
+            <div class="tooltiptext">
+              <h4>Upcoming Events</h4>
+            </div>
+          </div>
+          <div class="tooltip">
+            <%= link_to "Listen", page_path('listen'),  class: "hvr-float #{active_class(pages_listen_url)}" %>
+            <div class="tooltiptext">
+              <h4>Listen to any Sermon</h4>
+            </div>
+          </div>
+        </div>
+        <div id="suprise">
+          <%= link_to "Home", root_path, class: "hvr-float #{active_class(root_url)} #{active_class(pages_home_url)}" %>
+          <%= link_to "Message", page_path('message'),  class: "hvr-float #{active_class(pages_message_url)}" %>
+          <%= link_to "Contact", page_path('contact'),  class: "hvr-float #{active_class(pages_contact_url)}"%>
+          <%= link_to "Events", page_path('events'),  class: "hvr-float #{active_class(pages_events_url)}"%>
+          <%= link_to "Listen", page_path('listen'),  class: "hvr-float #{active_class(pages_listen_url)}" %>
+        </div>
+
+
+
+
+
+        </div>
+
+        <button id="hamburg" src=''></button>
+    </div>
+      <div id="itop"></div>
+      <%= yield %>
+      <script>
+        aside = false;
+        console.log($('body').scrollTop())
+        console.log($('button').click())
+        var i = 0;
+        var j = 0;
+        var hvr = false;
+
+        //var outerPane = $details.find(".details-pane-outer"),
+        didScroll = false;
+
+        $(window).scroll(function() {
+            didScroll = true;
+        });
+
+        var positionBLK = ($('.active').position().left)+(($('.active').width())/2)-($('.blk').width()/2);
+        $('.blk').stop().animate({left: positionBLK}, 1100);
+        $('#suprise .active').slideUp('fast');
+        $("#suprise a:not('.active')").css('display', 'none');
+
+        var first = true;
+        var mobile = false;
+
+        setInterval(function() {
+
+          $('.links').hover(function(){
+            hvr = true
+          });
+
+          $('a').hover(function(){
+            hvr = true
+          });
+
+          $('.blkbox').hover(function(){
+            hvr = true
+          });
+
+          var scroll = $(window).scrollTop();
+
+
+          if ( (didScroll || hvr)&& !mobile) {
+              didScroll = false;
+              //console.log(pACT);
+              scroll = $(window).scrollTop();
+
+              if(scroll < 25){
+                $('.blkbox').stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 600);
+                $('#links').each(function(){
+                  $(this).stop().slideDown("fast");
+                });
+                $('.blk').stop().animate({left: positionBLK}, 1100);
+                $('#suprise .active').stop().slideUp('fast');
+              };
+              if(scroll > 25 && hvr){
+                $('.blkbox').stop().animate({backgroundColor: "rgba(0,0,0,.5)"}, 600);
+                $('#links').each(function(){
+                  $(this).stop().slideDown("fast");
+                });
+                $('.blk').stop().animate({left: positionBLK}, 1100);
+                $('#suprise .active').slideUp('fast');
+                hvr = false;
+              }else if(scroll > 25 && !hvr){
+                $('.blkbox').stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 600);
+                $('#links').each(function(){
+                  $(this).stop().slideUp("fast");
+                });
+                $('.blk').stop().animate({left: "79.3vw"}, 1100);
+                $('#suprise .active').stop().slideDown('fast');
+              };
+
+          };
+
+        }, 700);
+
+        if(($(window).width() < 700)&& first){
+          $('#top').slideUp();
+          first = false;
+          mobile = true;
+        };
+
+        var down = false;
+        $('#hamburg').click(function(){
+          if(down){
+            $('#hamburg').animate({
+              top: "20vw"
+            }, 400);
+            down = false;
+          }else{
+            $('#hamburg').animate({
+              top: "125vw"
+            }, 400);
+            down = true;
+          }
+          $('#top').slideToggle();
+        });
+      </script>
+  </div>
   </body>
 </html>

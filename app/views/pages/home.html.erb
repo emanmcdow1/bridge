@@ -1,0 +1,48 @@
+<div class="hblk" style="visibility: hidden;"></div>
+
+<div class='cont' id="tempo">
+  <div class="carousel" id="tempc" >
+    <% @events.each do |event| %>
+    <div>
+      <%= image_tag event.background.url%>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<h1 class="headr">Welcome Home!</h1>
+<div class="hblk"></div>
+<div class="cont" id="smalltext">
+  <p>
+  Welcome to The Bridge's website! We are a welcoming and growing church located in the heart of middle Georgia. No matter who you are, or where you are in life, you will always have a spot at The Bridge. Come visit us on Sundays when we have services at 9. If you are interested in who we are and what we stand for, visit our Message page.
+</p>
+</div>
+
+<h1 class="headr")>Events</h1>
+<div class="hblk"></div>
+<div class="cont" id="smalltext">
+  <p>
+  Here at the Bridge, we do so much more than just Sunday Services. So why don't you just come on down and enjoy life with us! See what is coming up in the future by visiting our Events page.
+</p>
+</div>
+
+<h1 class="headr")>Listen to a sermon on the go!</h1>
+<div class="hblk"></div>
+<div class="cont" id="smalltext">
+  <p>
+  Don't have time to come on Sundays? No problem, because we have every sermon uploaded as a podcast, so you can recieve the word of God at any time you want. You can simply navigate to our Listen page, or find us on iTunes, to get started listening today.
+</p>
+</div>
+
+<script>
+  //**************Carousel
+  $('.carousel').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    prevArrow:"<div class='a-left control-c prev slick-prev hvr-grow' src='' id='leftb'></div>",
+    nextArrow:"<div class='a-right control-c next slick-next hvr-grow' src='' id='rightb'></div>"
+
+  });
+</script>

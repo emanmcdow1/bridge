@@ -1,0 +1,10 @@
+<ul id="events">
+  <% @events.each do |e| %>
+    <li>
+      <h1><%= e.title %></h1><br/>
+      <h3><%= e.date %></h3><br/>
+      <p><%= e.description %></p><br/>
+      <%= image_tag e.background.url %>
+    </li>
+  <% end %>
+</ul>
