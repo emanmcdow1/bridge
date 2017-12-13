@@ -13,6 +13,10 @@ class PagesController < ApplicationController
     @events = Event.all
   end
 
+  def edit
+    @events = Event.all
+  end
+
   def listen
   end
 end

@@ -1,4 +1,4 @@
-<% if logged_in? %>
+
 <%= form_for @event, :html => { :multipart => true } do |form| %>
   <p>
     <%= form.label :title %><br>
@@ -25,7 +25,4 @@
     <%= form.submit %>
   </p>
 
-<% end %>
-
-<%= link_to "Log out", logout_path, method: :delete %>
 <% end %>

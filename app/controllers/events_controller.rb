@@ -3,6 +3,10 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def edit
+    @events = Event.all
+  end
+
   def index
     @events = Event.all
   end
