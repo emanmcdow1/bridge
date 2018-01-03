@@ -13,9 +13,9 @@ set :deploy_via, :copy
 set :ssh_options, {:forward_agent => true, :port => 7822}
 set :keep_releases, 5
 set :pty, true
-role :app, %w{'70.32.24.246'}
-role :web, %w{'70.32.24.246'}
-role :db, %w{'70.32.24.246'}
+role :app, %w{70.32.24.246}
+role :web, %w{70.32.24.246}
+role :db, %w{70.32.24.246}
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
