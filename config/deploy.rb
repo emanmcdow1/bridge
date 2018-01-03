@@ -8,13 +8,14 @@ set :scm, :git
 set :branch, "master"
 set :user, "admin"
 set :use_sudo, false
+set :ssh_options, {:forward_agent => true, :port => 7822}
 set :rails_env, "staging"
 set :deploy_via, :copy
 set :keep_releases, 3
 role :app, %w{'70.32.24.246'}
 role :web, %w{'70.32.24.246'}
 role :db, %w{'70.32.24.246'}
-set :ssh_options, {:forward_agent => true, :port => 7822}
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
