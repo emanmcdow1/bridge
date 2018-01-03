@@ -16,6 +16,18 @@ role :app, %w{admin@70.32.24.246}
 role :web, %w{admin@70.32.24.246}
 role :db, %w{admin@70.32.24.246}
 
+desc "Symlink shared config files"
+task :symlink_config_files do
+    run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+end
+
+desc "Restart Passenger app"
+task :restart do
+    run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+end
+
+after "deploy", "deploy:symlink_config_files"
+after "deploy", "deploy:restart"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
