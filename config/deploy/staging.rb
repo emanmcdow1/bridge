@@ -1,3 +1,19 @@
+lock "~> 3.10.1"
+
+set :application, "Bridge"
+set :repo_url, "https://github.com/emanmcdow1/bridge"
+set :deploy_to, "home/admin"
+set :scm, :git
+set :branch, "master"
+set :user, "admin"
+set :use_sudo, false
+set :rails_env, "staging"
+set :deploy_via, :copy
+set :ssh_options, {:forward_agent => true, :port => 7822}
+set :keep_releases, 3
+role :app, %w{70.32.24.246}
+role :web, %w{70.32.24.246}
+role :db, %w{70.32.24.246}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
