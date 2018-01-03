@@ -7,8 +7,8 @@
 default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: emmett
-  password:
+  username: root
+  password: hihowareyou64
   encoding: unicode
   timeout: 5000
 
