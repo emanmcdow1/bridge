@@ -12,7 +12,7 @@ set :rails_env, "production"
 set :deploy_via, :copy
 set :ssh_options, {:forward_agent => true, :port => 7822}
 set :keep_releases, 5
-default_run_options[:pty] = true
+set :pty, true
 server "70.32.24.246", :app, :web, :db, :primary => true
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
