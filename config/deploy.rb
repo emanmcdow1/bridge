@@ -20,7 +20,7 @@ namespace :deploy do
   desc "Symlink shared config files"
   task :symlink_config_files do
       on "admin@70.32.24.246" do
-        execute "ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+        execute "ln -fs #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
       end
   end
 
