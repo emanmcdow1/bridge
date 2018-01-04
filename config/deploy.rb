@@ -19,12 +19,12 @@ role :db, %w{admin@70.32.24.246}
 namespace :deploy do
   desc "Symlink shared config files"
   task :symlink_config_files do
-      run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+      run "sudo ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
   end
 
   desc "Restart Passenger app"
   task :restart do
-      run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+      run "sudo touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
   end
 end
 
