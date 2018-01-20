@@ -53,7 +53,7 @@ end
 
 after "deploy", "deploy:symlink_config_files"
 after "deploy", "deploy:precompile"
-after "deploy", "deploy:bundle"
+#after "deploy", "deploy:bundle"
 after "deploy", "deploy:restart"
 
 # Default branch is :master
