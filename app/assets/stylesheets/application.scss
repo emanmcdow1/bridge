@@ -678,6 +678,14 @@
     font-size: 0px;
   }
 
+  .tooltip .tooltiptext::after{
+    visibility: hidden;
+    display: none !important;
+    width: 0px;
+    height: 0px;
+    font-size: 0px;
+  }
+
   .cont{
     width: 100vw;
     margin: 0 0 6vw 0;
