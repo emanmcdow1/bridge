@@ -673,6 +673,9 @@
   .tooltip .tooltiptext::after{
     visibility: hidden;
     display: none !important;
+    width: 0px;
+    height: 0px;
+    font-size: 0px;
   }
 
   .cont{
