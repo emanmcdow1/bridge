@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'Museo_Slab_500_2';
-    src: url('fonts/Museo_Slab_500_2-webfont.woff2') format('woff2'),
-         url('fonts/Museo_Slab_500_2-webfont.woff') format('woff');
+    src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
+         url('Museo_Slab_500_2-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
