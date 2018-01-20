@@ -131,6 +131,7 @@
 .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
+    display: block;
     bottom: 100%;
     left: 50%;
     margin-left: -10px;
@@ -671,6 +672,7 @@
 @media only screen and (max-width: 700px) {
   .tooltip .tooltiptext::after{
     visibility: hidden;
+    display: none !important;
   }
 
   .cont{
@@ -725,7 +727,6 @@
     margin-top: 6vw;
     margin-bottom: 3vw;
   }
-
 
   #ssicon{
     width: 60vw;
