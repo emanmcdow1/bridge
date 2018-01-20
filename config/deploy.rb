@@ -24,15 +24,36 @@ namespace :deploy do
       end
   end
 
+  desc "Precompile assets"
+  task :precompile do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'assets:precompile'
+        end
+      end
+    end
+  end
+
+  desc "Bundle install"
+  task :bundle do
+    on "admin@70.32.24.246" do
+      execute "cd current && bundle install --without development test"
+    end
+  end
+
   desc "Restart Passenger app"
   task :restart do
       on "admin@70.32.24.246" do
         execute "touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
       end
   end
+
 end
 
 after "deploy", "deploy:symlink_config_files"
+after "deploy", "deploy:precompile"
+after "deploy", "deploy:bundle"
 after "deploy", "deploy:restart"
 
 # Default branch is :master
