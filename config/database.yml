@@ -7,13 +7,16 @@
 default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
+  username: emmett
   password: hihowareyou64
   encoding: unicode
   timeout: 5000
+  template: template0
 
 development:
   <<: *default
+  username: emmett
+  password: hihowareyou64
   database: prod_pg
 
 # Warning: The database defined as "test" will be erased and
@@ -26,3 +29,5 @@ test:
 production:
   <<: *default
   database: prod_pg
+  username: admin
+  password: e3$C1f!
