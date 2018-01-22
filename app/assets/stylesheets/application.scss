@@ -375,6 +375,12 @@
    width: 20%;
    margin-top: 1.5vw;
    margin-bottom: 1.5vw;
+   border-radius: 50%;
+    body {
+      background: {
+         image: asset_url("image3.png");
+      }
+    }
  }
 
  .staff div:nth-of-type(2){
@@ -903,4 +909,5 @@
   #links div{
     margin: 6vw 3vw 6vw 1vw;
   }
+}
 }
