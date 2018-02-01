@@ -3,8 +3,6 @@
     <%= image_tag event.background.url %>
     <div>
       <h1><%= event.title %></h1>
-      <h3><%= event.date.strftime("%A, %B #{event.date.day.ordinalize}") %></h3>
-      <h3><%= event.date.strftime("%l:%M %P") %></h3>
     </div>
     <div>
       <p><%= event.description %></p>

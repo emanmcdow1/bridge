@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  get 'pages/message'
+  get 'pages/vision'
 
   get 'pages/contact'
 
