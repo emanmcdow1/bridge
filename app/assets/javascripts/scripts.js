@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+
 aside = false;
 var i = 0;
 var j = 0;
@@ -13,8 +15,6 @@ $(window).scroll(function() {
 var first = true;
 var mobile = false;
 
-
-$(document).ready(function(){
   positionBLK = ($('.active').position().left)+(($('.active').width())/2)-($('.blk').width()/2);
   $('.blk').css('left', positionBLK);
   $('#suprise .active').slideUp('fast');
