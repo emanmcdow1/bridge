@@ -90,7 +90,7 @@ $( document ).ready(function() {
   };
 
   var down = false;
-  $('#hamburg').click(function(){
+  $('#hamburg').unbind('click').click(function(){
     if(down){
       $('#hamburg').animate({
         top: "20vw"
