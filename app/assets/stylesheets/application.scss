@@ -189,6 +189,24 @@
    margin-bottom: 2vw;
  }
 
+#contimg{
+    height: 12.4vw;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-shadow: 7px 7px 5px #000;
+            box-shadow: 7px 7px 5px #000;
+    width: 70%;
+    margin-bottom: 1vw;
+}
 #tempo{
   padding: 0;
   margin-bottom: 3vw;
@@ -606,9 +624,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+          -webkit-box-pack: end;
+              -ms-flex-pack: end;
+                  justify-content: flex-end;
   margin: 3vw 0 1vw 0;
 }
 
@@ -617,6 +635,7 @@
   width: 10vw;
   height: 3vw;
   border-radius: 9px;
+  margin: auto;
 }
 
 .mssblk{
@@ -647,7 +666,7 @@
   background-image: image-url('bowlntowel.png');
 }
 
-.mss p, .mss h2{
+.mss p{
   margin: 0 15%;
 }
 
