@@ -98,7 +98,7 @@ $( document ).ready(function() {
       down = false;
     }else{
       $('#hamburg').animate({
-        top: "125vw"
+        top: "150vw"
       }, 400);
       down = true;
     }

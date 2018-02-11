@@ -36,6 +36,7 @@
 
  .headr{
    color: white;
+   font-size: 40px;
    font-family: 'Museo_Slab_500_2';
    text-align: center;
    font-weight: normal;
@@ -354,9 +355,10 @@
 
 
  h3{
-   color: black;
+   color: white;
    font-family: 'Museo_Slab_500_2';
-   font-weight: normal;
+   font-size: 22px;
+   font-weight: normal
  }
 
  h1, h2, h3, h4{
@@ -383,6 +385,10 @@
    padding: 0;
  }
 
+ #first{
+   width: 40%;
+ }
+
  .staff div{
    margin-left: auto;
    margin-right: auto;
@@ -391,8 +397,8 @@
  .staff div:nth-of-type(1){
    display: inline-block !important;
    border-radius: 50% !important;
-   width: 13vw !important;
-   height: 13vw !important;
+   width: 13vw;
+   height: 13vw ;
    background-color: #7ac3cf !important;
    background-size: 100% !important;
    background-repeat: no-repeat !important;
@@ -455,6 +461,10 @@
  }
 .class div{
   margin: 2vw;
+}
+
+.class h2{
+  font-size: 28px;
 }
 
  .class img{
@@ -631,10 +641,9 @@
   margin: 3vw 0 1vw 0;
 }
 
-.mss h1{
-  width: 10vw;
-  height: 3vw;
+.mss h2{
   border-radius: 9px;
+  font-size: 30px;
   margin: auto;
   color: white;
   white-space: nowrap;
@@ -759,6 +768,10 @@
   margin: auto;
 }
 
+.sermon h3{
+  color: black;
+}
+
 section{
   position: fixed;
   top: 0px;
@@ -812,7 +825,7 @@ section{
   }
 
   .headr{
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .hblk{
@@ -843,7 +856,7 @@ section{
 
   .mss div{
     width: 70vw;
-    height: 19.7vw;
+    height: 25vw;
     margin-top: 11vw;
     margin-bottom: 7vw;
   }
@@ -861,7 +874,7 @@ section{
   }
 
   .mss h2{
-    font-size: 22px;
+    font-size: 25px;
   }
 
   #infobox{
@@ -881,6 +894,15 @@ section{
   .map div{
     margin: 3vw 6vw 6vw 6vw;
   }
+  #contimg{
+    margin-top: 5vw;
+    height: auto;
+    width: 60%;
+  }
+  #first{
+    width: 60%;
+  }
+
 
   .staff{
     -webkit-box-orient: horizontal;
@@ -894,7 +916,6 @@ section{
   }
 
   .staff h1{
-    font-size: 25px;
     text-align: center;
   }
 
@@ -903,7 +924,8 @@ section{
   }
 
   .staff div:nth-of-type(1){
-    width: 60%;
+    width: 50vw;
+    height: 50vw;
   }
 
   .staff div:nth-of-type(2){
@@ -918,6 +940,7 @@ section{
         -ms-flex-positive: 0;
             flex-grow: 0;
   }
+
 
   .evt{
     -webkit-box-orient: vertical;
@@ -999,5 +1022,14 @@ section{
 
   #links div{
     margin: 6vw 3vw 6vw 1vw;
+  }
+
+  .sermon img{
+    width: 20vw;
+    margin-right: 4vw;
+  }
+
+  .sermon{
+    width: 80%;
   }
 }
