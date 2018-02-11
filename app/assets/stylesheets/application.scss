@@ -630,12 +630,14 @@
   margin: 3vw 0 1vw 0;
 }
 
-.mss h2{
-  background-color: #7ac3cf;
+.mss h1{
   width: 10vw;
   height: 3vw;
   border-radius: 9px;
   margin: auto;
+  color: white;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .mssblk{
@@ -731,7 +733,7 @@
   border-radius: 0;
   display: -webkit-box;
   display: -ms-flexbox;
-  width: 60%;
+  width: 65%;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;

@@ -35,6 +35,17 @@ namespace :deploy do
     end
   end
 
+  desc "Sitemap"
+  task :sitemap do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'sitemap:refresh'
+        end
+      end
+    end
+  end
+
   desc "Bundle install"
   task :bundle do
     on "admin@70.32.24.246" do

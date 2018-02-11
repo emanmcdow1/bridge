@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Bridge Church</title>
+    <title><%= page_title %></title>
     <%= csrf_meta_tags %>
     <META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="https://www.stitcher.com/podcast/this-american-life">
     <meta name="viewport" content="width=device-width">
@@ -28,7 +28,13 @@
             <%= link_to "Vision", page_path('vision'),  class: "hvr-float #{active_class(pages_vision_url)}" %>
             <div class="tooltiptext">
               <h4>Our Message</h4>
-              <h4>Classes</h4>
+            </div>
+          </div>
+          <div class="tooltip">
+            <%= link_to "Groups", page_path('groups'),  class: "hvr-float #{active_class(pages_groups_url)}" %>
+            <div class="tooltiptext">
+              <h4>Sunday School Classes</h4>
+              <h4>Ministry Action Teams</h4>
             </div>
           </div>
           <div class="tooltip">
@@ -54,7 +60,8 @@
         </div>
         <div id="suprise">
           <%= link_to "Home", root_path, class: "hvr-float #{active_class(root_url)} #{active_class(pages_home_url)}" %>
-          <%= link_to "Message", page_path('vision'),  class: "hvr-float #{active_class(pages_vision_url)}" %>
+          <%= link_to "Vision", page_path('vision'),  class: "hvr-float #{active_class(pages_vision_url)}" %>
+          <%= link_to "Groups", page_path('groups'),  class: "hvr-float #{active_class(pages_groups_url)}" %>
           <%= link_to "Contact", page_path('contact'),  class: "hvr-float #{active_class(pages_contact_url)}"%>
           <%= link_to "Events", page_path('events'),  class: "hvr-float #{active_class(pages_events_url)}"%>
           <%= link_to "Listen", page_path('listen'),  class: "hvr-float #{active_class(pages_listen_url)}" %>

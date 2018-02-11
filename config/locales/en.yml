@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+  bridge: "The Bridge Church"
+  pages:
+
+    vision:
+        title: "Vision"
+    listen:
+      title: "Listen"
+    groups:
+        title: "Groups"
+    events:
+        title: "Events"
+    contact:
+        title: "Contact"

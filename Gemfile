@@ -15,8 +15,8 @@ gem 'bcrypt',       '3.1.11'
 gem 'jquery-ui-rails'
 gem "jquery-slick-rails"
 gem 'rails_real_favicon'
-gem 'ruby-mp3info', :require => 'mp3info'
-gem 'jplayer-rails'
+gem 'page_title_helper'
+gem 'sitemap_generator'
 
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri
