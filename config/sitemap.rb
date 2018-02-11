@@ -31,10 +31,10 @@ SitemapGenerator::Sitemap.create do
   add '/pages/listen'
 
   Event.find_each do |event|
-    add event_path(event), :lastmod => content.updated_at
+    add event_path(event), :lastmod => event.updated_at
   end
 
   Sermon.find_each do |sermon|
-    add sermon_path(sermon), :lastmod => content.updated_at
+    add sermon_path(sermon), :lastmod => sermon.updated_at
   end
 end
