@@ -69,3 +69,17 @@
       </div>
   </div>
 <% end %>
+
+<% @sermons.each do |sermon| %>
+  <div class="cont evt">
+    <div>
+      <h1><%= sermon.title %></h1>
+      <h3><%= sermon.speaker %></h3>
+      <h3><%= sermon.date %></h3>
+    </div>
+  </div>
+      <div>
+        <%= button_to("Delete Sermon",  { controller: :sermons, action: "destroy", id: sermon.id }, method: :delete, data: { confirm: "Are you sure?" }) %>
+      </div>
+  </div>
+<% end %>

@@ -31,7 +31,8 @@
 
 en:
   hello: "Hello world"
-  bridge: "The Bridge Church"
+  bridge:
+    title: "The Bridge Church"
   pages:
 
     vision:
