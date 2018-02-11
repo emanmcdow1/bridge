@@ -121,6 +121,7 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
+    normalize-rails (4.1.1)
     page_title_helper (2.1.0)
       rails (>= 3.0.0)
     pg (0.21.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   jquery-slick-rails
   jquery-ui-rails
   listen (= 3.0.8)
+  normalize-rails
   page_title_helper
   paperclip!
   pg (= 0.21.0)

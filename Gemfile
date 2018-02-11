@@ -17,6 +17,7 @@ gem "jquery-slick-rails"
 gem 'rails_real_favicon'
 gem 'page_title_helper'
 gem 'sitemap_generator'
+gem 'normalize-rails'
 
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri

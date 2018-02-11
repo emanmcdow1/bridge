@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title><%= page_title %></title>
     <%= csrf_meta_tags %>
-    <META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="https://www.stitcher.com/podcast/this-american-life">
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
@@ -73,10 +72,9 @@
 
         </div>
 
-        <button id="hamburg" src=''></button>
+        <button id="hamburg"></button>
     </div>
       <div id="itop"></div>
       <%= yield %>
-  </div>
   </body>
 </html>
