@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  resources :events
+  resources :events, :sermons
 
   get 'pages/home'
 

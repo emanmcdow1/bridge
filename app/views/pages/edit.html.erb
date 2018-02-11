@@ -1,3 +1,59 @@
+
+<%= form_for @event, :html => { :multipart => true } do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </p>
+
+  <p>
+    <%= form.label :date %>
+    <%= form.datetime_local_field :date %>
+  </p>
+
+  <p>
+    <%= form.label :background %>
+    <%= form.file_field :background %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= form_for @sermon, :html => { :multipart => true } do |form| %>
+  <p>
+    <%= form.label :audio %>
+    <%= form.file_field :audio%>
+  </p>
+
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :speaker %>
+    <%= form.text_field :speaker %>
+  </p>
+
+  <p>
+    <%= form.label :date %>
+    <%= form.datetime_local_field :date %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <% @events.each do |event| %>
   <div class="cont evt">
     <%= image_tag event.background.url %>

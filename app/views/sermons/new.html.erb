@@ -1,0 +1,10 @@
+<%= form_for @sermon, :html => { :multipart => true } do |form| %>
+  <p>
+    <%= form.label :audio %>
+    <%= form.file_field :audio%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

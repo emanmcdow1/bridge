@@ -5,10 +5,21 @@
     Missed a sermon? Just trying to catch up? Can't make it on Sunday? No problem. All of the sermons are here, so you can listen on the go, or in the comfort of your own home.
   </p>
 </div>
-<div style="overflow: hidden;" class='cont'>
-  <div>
-    <iframe class="podcast"src="https://audiomack.com/artist/the-bridge-church&output=embed" scrolling="auto width='100%'" frameborder="0"
-    allowtransparency="no" allowfullscreen="allowfullscreen" style="box-shadow: 7px 7px 5px #000;" id="podcast"
-    ></iframe>
-  </div>
+<div  class='cont' id='smalltext'>
+  <% @sermons.each do |sermon| %>
+    <div class="sermon">
+      <div>
+        <%= link_to image_tag('play.png'), sermon.audio.url, :class => "html5 hvr-float" %>
+      </div>
+      <div>
+        <h1><%= sermon.title %></h1>
+        <h3><%= sermon.speaker %></h3>
+        <h3><%= sermon.date %></h3>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
+<div>
+  <section id="audio"> </section>
 </div>

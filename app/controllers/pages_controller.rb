@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @events = Event.all
   end
 
-  def message
+  def vision
   end
 
   def contact
@@ -15,8 +15,12 @@ class PagesController < ApplicationController
 
   def edit
     @events = Event.all
+    @event = Event.new
+    @sermon = Sermon.new
+    @sermons = Sermon.all
   end
 
   def listen
+    @sermons = Sermon.all
   end
 end

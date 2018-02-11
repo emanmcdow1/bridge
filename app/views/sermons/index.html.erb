@@ -1,0 +1,16 @@
+<div style="overflow: hidden;" class='cont'>
+  <% @sermons.each do |sermon| %>
+      <div>
+        <p> Test</p>
+        <h1><%= sermon.title %></h1>
+        <h3><%= sermon.speaker %></h3>
+        <h3><%= sermon.date %></h3>
+      </div>
+
+      <% if logged_in? %>
+        <div>
+          <%= button_to("Delete sermon",  { controller: :sermons, action: "destroy", id: sermon.id }, method: :delete, data: { confirm: "Are you sure?" }) %>
+        </div>
+      <% end %>
+  <% end %>
+</div>
