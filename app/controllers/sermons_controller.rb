@@ -23,10 +23,11 @@ class SermonsController < ApplicationController
 
   def destroy
     @sermon = Sermon.find(params[:id])
-    @Sermon.destroy
+    @sermon.destroy
     flash[:success] = "Sermon deleted"
     redirect_to page_path('listen')
   end
+
   private
     def sermon_params
       params.require(:sermon).permit(:audio, :title, :speaker, :date)
