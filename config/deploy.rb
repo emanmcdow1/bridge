@@ -15,6 +15,7 @@ set :keep_releases, 3
 role :app, %w{admin@70.32.24.246}
 role :web, %w{admin@70.32.24.246}
 role :db, %w{admin@70.32.24.246}
+append :linked_dirs, "public/system"
 
 namespace :deploy do
   desc "Symlink shared config files"
