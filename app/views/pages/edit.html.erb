@@ -1,85 +1,101 @@
+<% if logged_in? %>
+  <h1 class="headr">Add Events</h1>
+  <div class="hblk"></div>
+  <div class="cont">
+    <%= form_for @event, :html => { :multipart => true } do |form| %>
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+      </p>
 
-<%= form_for @event, :html => { :multipart => true } do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+      <p>
+        <%= form.label :description %>
+        <%= form.text_field :description %>
+      </p>
 
-  <p>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </p>
+      <p>
+        <%= form.label :date %>
+        <%= form.datetime_local_field :date %>
+      </p>
 
-  <p>
-    <%= form.label :date %>
-    <%= form.datetime_local_field :date %>
-  </p>
-
-  <p>
-    <%= form.label :background %>
-    <%= form.file_field :background %>
-  </p>
-
-
-  <p>
-    <%= form.submit %>
-  </p>
-
-<% end %>
-
-<%= form_for @sermon, :html => { :multipart => true } do |form| %>
-  <p>
-    <%= form.label :audio %>
-    <%= form.file_field :audio%>
-  </p>
-
-  <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :speaker %>
-    <%= form.text_field :speaker %>
-  </p>
-
-  <p>
-    <%= form.label :date %>
-    <%= form.datetime_local_field :date %>
-  </p>
+      <p>
+        <%= form.label :background %>
+        <%= form.file_field :background %>
+      </p>
 
 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+      <p>
+        <%= form.submit %>
+      </p>
 
-<% @events.each do |event| %>
-  <div class="cont evt">
-    <%= image_tag event.background.url %>
-    <div>
-      <h1><%= event.title %></h1>
-    </div>
-    <div>
-      <p><%= event.description %></p>
-    </div>
+    <% end %>
+  </div>
 
+  <h1 class="headr">Add Sermons</h1>
+  <div class="hblk"></div>
+  <div class="cont">
+    <%= form_for @sermon, :html => { :multipart => true } do |form| %>
+      <p>
+        <%= form.label :audio %>
+        <%= form.file_field :audio%>
+      </p>
+
+      <p>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </p>
+
+      <p>
+        <%= form.label :speaker %>
+        <%= form.text_field :speaker %>
+      </p>
+
+      <p>
+        <%= form.label :date %>
+        <%= form.datetime_local_field :date %>
+      </p>
+
+
+      <p>
+        <%= form.submit %>
+      </p>
+  <% end %>
+  </div>
+
+  <h1 class="headr">Delete Events</h1>
+  <div class="hblk"></div>
+  <% @events.each do |event| %>
+    <div class="cont evt">
+      <%= image_tag event.background.url %>
       <div>
-        <%= button_to("Delete Event",  { controller: :events, action: "destroy", id: event.id }, method: :delete, data: { confirm: "Are you sure?" }) %>
+        <h1><%= event.title %></h1>
       </div>
-  </div>
-<% end %>
+      <div>
+        <p><%= event.description %></p>
+      </div>
 
-<% @sermons.each do |sermon| %>
-  <div class="cont evt">
-    <div>
-      <h1><%= sermon.title %></h1>
-      <h3><%= sermon.speaker %></h3>
-      <h3><%= sermon.date %></h3>
+        <div>
+          <%= button_to("Delete Event",  { controller: :events, action: "destroy", id: event.id }, method: :delete, data: { confirm: "Are you sure?" }) %>
+        </div>
     </div>
-  </div>
+  <% end %>
+
+  <h1 class="headr">Delete Sermons</h1>
+  <div class="hblk"></div>
+  <% @sermons.each do |sermon| %>
+    <div class="cont evt">
+      <div class="sermon">
+        <h1><%= sermon.title %></h1><br/>
+        <h3><%= sermon.speaker %></h3><br/>
+        <h3><%= sermon.date %></h3><br/>
+      </div>
       <div>
         <%= button_to("Delete Sermon",  { controller: :sermons, action: "destroy", id: sermon.id }, method: :delete, data: { confirm: "Are you sure?" }) %>
       </div>
-  </div>
+    </div>
+  <% end %>
+
+  <%= link_to "Log out", logout_path, method: :delete, class: "button" %>
+<% else %>
+  <li><%= link_to "Log in", login_path,  class: "button" %></li>
 <% end %>
