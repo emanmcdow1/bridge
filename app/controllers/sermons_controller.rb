@@ -20,11 +20,12 @@ class SermonsController < ApplicationController
   def listen
     @sermons = Sermon.order(:date)
   end
+
   def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
-    flash[:success] = "User deleted"
-    redirect_to page_path('events')
+    @sermon = Sermon.find(params[:id])
+    @Sermon.destroy
+    flash[:success] = "Sermon deleted"
+    redirect_to page_path('listen')
   end
   private
     def sermon_params
