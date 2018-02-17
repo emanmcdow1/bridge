@@ -20,7 +20,12 @@ class SermonsController < ApplicationController
   def listen
     @sermons = Sermon.order(:date)
   end
-
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:success] = "User deleted"
+    redirect_to page_path('events')
+  end
   private
     def sermon_params
       params.require(:sermon).permit(:audio, :title, :speaker, :date)
