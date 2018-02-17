@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%= page_title %></title>
+    <title>
+      <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+      The Bridge Church
+    </title>
+
+    <meta name='description'
+      content='<%= yield_meta_tag(:description, 'Default description') %>' />
+    <meta name='keywords'
+      content='<%= yield_meta_tag(:keywords, 'defaults,ruby,rails') %>' />
+
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all' %>
