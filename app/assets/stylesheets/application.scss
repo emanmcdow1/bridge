@@ -136,6 +136,7 @@
 
 .highlight h2{
   color: black!important;
+  white-space: normal!important;
 }
 
 #links a{
@@ -336,11 +337,14 @@
 
  #leftb{
    width: 4vw;
+   height: 6vw;
    border-style: none;
    height: 6vw;
     border-color: rgba(0,0,0,0);
     border: 0;
    background-image: image-url('leftArrow.png');
+   background-size: 100%;
+   background-repeat: no-repeat;
  }
 
  #rightb{
@@ -349,7 +353,9 @@
    border-style: none;
    border-color: rgba(0,0,0,0);
    border: 0;
+   background-size: 100%;
    background-image: image-url('rightArrow.png');
+   background-repeat: no-repeat;
  }
 
  .active{
@@ -386,7 +392,7 @@
 
 
 
- .staff h1, .evt h1, .mss h2{
+ .staff h1, .evt h1, .mss h2, .evt h3{
    color: black;
    font-family: 'Museo_Slab_500_2';
    font-weight: normal;
@@ -1056,5 +1062,8 @@ section{
 
   .sermon{
     width: 80%;
+  }
+  .highlight{
+    margin-top: 22vw!important;
   }
 }

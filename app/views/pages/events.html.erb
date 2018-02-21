@@ -19,14 +19,5 @@
       <p><%= event.description %></p>
     </div>
 
-    <% if logged_in? %>
-      <div>
-        <%= button_to("Delete Event",  { controller: :events, action: "destroy", id: event.id }, method: :delete, data: { confirm: "Are you sure?" }) %>
-      </div>
-    <% end %>
   </div>
-<% end %>
-
-<% if logged_in? %>
-  <%= link_to "Log out", logout_path, method: :delete %>
 <% end %>
