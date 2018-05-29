@@ -18,7 +18,7 @@ class SermonsController < ApplicationController
   end
 
   def listen
-    @sermons = Sermon.order(:date)
+    @sermons = Sermon.reorder(id: :date)
   end
 
   def destroy
