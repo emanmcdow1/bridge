@@ -5,7 +5,6 @@ class SermonsController < ApplicationController
   end
 
   def index
-    @sermons = Sermon.all
   end
 
   def edit
