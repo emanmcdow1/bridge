@@ -21,6 +21,5 @@ class PagesController < ApplicationController
   end
 
   def listen
-    @sermons = Sermon.all
   end
 end
