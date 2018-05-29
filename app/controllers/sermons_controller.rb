@@ -6,10 +6,12 @@ class SermonsController < ApplicationController
 
   def index
     @sermons = Sermon.all
+    @sermons.sort_by{|sermon| sermon.date}
   end
 
   def edit
     @sermons = Sermon.all
+    @sermons.sort_by{|sermon| sermon.date}
     @sermon = Sermon.new
   end
 
