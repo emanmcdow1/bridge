@@ -6,12 +6,10 @@ class SermonsController < ApplicationController
 
   def index
     @sermons = Sermon.all
-    @sermons.sort_by{|sermon| sermon.date}
   end
 
   def edit
     @sermons = Sermon.all
-    @sermons.sort_by{|sermon| sermon.date}
     @sermon = Sermon.new
   end
 
@@ -20,8 +18,7 @@ class SermonsController < ApplicationController
   end
 
   def listen
-    @sermons = Sermon.all
-    @sermons.sort_by{|sermon| sermon.date}
+    @sermons = Sermon.all.sort {|s1,s2| s1.date <=> s2.date}
   end
 
   def destroy
