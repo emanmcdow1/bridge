@@ -21,6 +21,6 @@ class PagesController < ApplicationController
   end
 
   def listen
-    @sermons = Sermon.all.sort {|s1,s2| s1.date <=> s2.date}
+    @sermons = Sermon.all.sort {|s1,s2| s2.date <=> s1.date}
   end
 end
