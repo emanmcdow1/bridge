@@ -1,4 +1,4 @@
-<% if logged_in? %>
+
   <h1 class="headr">Add Events</h1>
   <div class="hblk"></div>
   <div class="cont">
@@ -96,6 +96,3 @@
   <% end %>
 
   <%= link_to "Log out", logout_path, method: :delete, class: "button" %>
-<% else %>
-  <li><%= link_to "Log in", login_path,  class: "button" %></li>
-<% end %>
